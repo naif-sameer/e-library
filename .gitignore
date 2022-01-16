@@ -1,0 +1,4 @@
+*.scss
+*.ts
+*.log
+css/index.css.map
