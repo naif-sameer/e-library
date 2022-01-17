@@ -138,12 +138,18 @@ input::placeholder {
 }
 
 .c-nav__form button {
-  border-left: 2px solid #d1d5db;
-  padding-left: 0.5rem;
+  -webkit-border-start: 2px solid #d1d5db;
+          border-inline-start: 2px solid #d1d5db;
+  -webkit-padding-start: 0.5rem;
+          padding-inline-start: 0.5rem;
 }
 
 .c-nav__logo {
   font-size: 1.5rem;
+}
+
+.c-footer {
+  font-size: 0.9rem;
 }
 
 .c-footer-nav {
@@ -162,24 +168,26 @@ input::placeholder {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .c-footer__item {
   -webkit-box-flex: 1;
-      -ms-flex: 1 2 300px;
-          flex: 1 2 300px;
+      -ms-flex: 1 2 15%;
+          flex: 1 2 15%;
 }
 
 .c-footer__item-title {
-  border-bottom: 1px solid #686868;
   margin-bottom: 0.5rem;
   padding-bottom: 0.35rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-bottom: 1px solid #686868;
 }
 
 .c-footer__form {
   background-color: var(--secondary-bg);
-  padding: 0.5rem;
+  padding: 1rem;
   border-radius: var(--rounded);
 }
 
@@ -207,15 +215,19 @@ input::placeholder {
 }
 
 .c-footer__form button {
-  margin-top: 0.25rem;
+  margin-top: 0.75rem;
   padding: 0.25rem 0.7rem;
   background-color: var(--third-bg);
   color: var(--primary-color);
   border-radius: var(--rounded);
 }
 
+.c-footer__link:not(:first-of-type) {
+  margin-top: 0.5rem;
+}
+
 .c-footer .c-social {
-  margin-top: 2rem;
+  margin-top: 5rem;
   color: var(--third-color);
 }
 
@@ -227,6 +239,7 @@ input::placeholder {
   padding-top: 2rem;
   padding-bottom: 2rem;
   background-color: var(--third-bg);
+  font-size: .8rem;
 }
 
 .c-copyright .container {
@@ -239,6 +252,25 @@ input::placeholder {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.c-copyright__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.25rem;
+}
+
+.c-copyright__links a:first-of-type {
+  padding-left: 0.25rem;
+  border-left: 2px solid var(--primary-bg);
+}
+
+.c-copyright__info p {
+  margin-top: 1.5rem;
 }
 
 .c-copyright__payments {
