@@ -6,6 +6,7 @@ body {
   --secondary-bg: #424242;
   --third-bg: #e5e7eb;
   --rounded: 4px;
+  --shadow: 0 0 4px #adadad;
   color: var(--primary-color);
 }
 
@@ -40,6 +41,35 @@ input::-ms-input-placeholder {
 
 input::placeholder {
   padding: inherit;
+}
+
+.price-label {
+  color: red;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.note {
+  padding: 0.5rem 1rem;
+  -webkit-border-start: 6px solid #e9e968;
+          border-inline-start: 6px solid #e9e968;
+  background-color: rgba(255, 255, 16, 0.39);
+  border-radius: var(--rounded);
+}
+
+.c-select {
+  border: 2px solid var(--third-color);
+  padding: 0.5rem 0.5rem;
+  border-radius: var(--rounded);
+  cursor: pointer;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: .6rem 2rem;
+  border-radius: var(--rounded);
+  text-align: center;
 }
 
 .c-header-menu {
@@ -318,12 +348,6 @@ input::placeholder {
   max-width: 30%;
 }
 
-.c-details .price-label {
-  color: red;
-  font-size: 2rem;
-  font-weight: 600;
-}
-
 .c-details .c-img-wrapper {
   padding: 2rem;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
@@ -563,5 +587,166 @@ input::placeholder {
   .c-copyright__payments img {
     width: 40px;
   }
+}
+
+.c-checkout {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.c-checkout .title {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.c-checkout .title span {
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+.c-checkout .item-wrapper {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 2rem;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.c-checkout .item {
+  padding: 1.4rem;
+  border-radius: var(--rounded);
+  -webkit-box-shadow: var(--shadow);
+          box-shadow: var(--shadow);
+}
+
+.c-checkout .item:not(:first-of-type) {
+  margin-top: 2rem;
+}
+
+.c-checkout .item__right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 2rem;
+}
+
+.c-checkout .item__img {
+  width: 40px;
+  display: inline-block;
+}
+
+.c-checkout .item__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.c-checkout .item__docs {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: gray;
+}
+
+.c-checkout .item .note {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.c-checkout .item-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 2rem;
+}
+
+.c-checkout .item__left {
+  padding-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.c-checkout .item__left .price {
+  white-space: nowrap;
+}
+
+.c-checkout .item__footer div {
+  padding-top: 1rem;
+  font-weight: 600;
+}
+
+.c-checkout .item__footer i {
+  -webkit-padding-end: 0.25rem;
+          padding-inline-end: 0.25rem;
+}
+
+.c-checkout .summary {
+  padding: 1.4rem;
+  -webkit-box-shadow: var(--shadow);
+          box-shadow: var(--shadow);
+  border-radius: var(--rounded);
+}
+
+.c-checkout .summary__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.c-checkout .summary__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.c-checkout .summary__title.total {
+  font-size: 1.5rem;
+  color: red;
+}
+
+.c-checkout .summary__title.total span {
+  font-size: 1rem;
+  color: gray;
+}
+
+.c-checkout .summary__footer {
+  margin-top: 6rem;
+}
+
+.c-checkout .summary__desc {
+  font-size: 0.9rem;
+}
+
+.c-checkout .summary__btn {
+  margin-top: 1.5rem;
+  background-color: red;
+  color: #fff;
+  font-size: 1.2rem;
 }
 /*# sourceMappingURL=index.css.map */
