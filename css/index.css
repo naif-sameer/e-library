@@ -749,4 +749,101 @@ input::placeholder {
   color: #fff;
   font-size: 1.2rem;
 }
+
+.c-stepper {
+  --active-color: #e91e63;
+  --color: #e5e7eb;
+  --text-active-color: rgb(255, 255, 255);
+  --text-color: black;
+}
+
+.c-stepper .step-nav {
+  position: relative;
+  margin: 4rem auto;
+  width: 80vw;
+  max-width: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.c-stepper .step-nav .step__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--color);
+  color: var(--text-color);
+}
+
+.c-stepper .step-nav .step__item.is-active {
+  background-color: var(--active-color);
+  color: var(--text-active-color);
+  font-weight: 600;
+  -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--active-color);
+          box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--active-color);
+}
+
+.c-stepper .step-nav .step__item.is-active:not(:last-of-type)::after {
+  background-color: var(--active-color);
+}
+
+.c-stepper .step-nav .step__item:not(:last-of-type)::after {
+  content: '';
+  position: absolute;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  width: calc(100% / 4);
+  height: 4px;
+  background-color: var(--color);
+  z-index: -1;
+}
+
+.c-stepper .js-step {
+  display: none;
+}
+
+.c-stepper .js-step.is-active {
+  display: block;
+}
+
+.c-stepper button {
+  margin-top: 3rem;
+  border: 2px solid red;
+  padding: 1rem 2rem;
+}
+
+/*
+ .btns {
+      margin: auto;
+      width: 50vw;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+  
+    .btns button {
+      padding: 0.6rem 1.2rem;
+      display: inline-block;
+      border: none;
+      background-color: var(--active-color);
+      color: var(--color);
+      border-radius: 4px;
+      cursor: pointer;
+    }
+*/
 /*# sourceMappingURL=index.css.map */
