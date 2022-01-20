@@ -821,10 +821,35 @@ input::placeholder {
   display: block;
 }
 
-.c-stepper button {
-  margin-top: 3rem;
-  border: 2px solid red;
-  padding: 1rem 2rem;
+.c-stepper .input-group {
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.25rem;
+}
+
+.c-stepper .input-group input {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--third-color);
+  border-radius: var(--rounded);
+}
+
+.c-stepper .btn-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+.c-stepper .btn-group button {
+  margin-top: 4rem;
+  border: 1px solid var(--active-color);
+  padding: 0.6rem 1rem;
 }
 
 /*
