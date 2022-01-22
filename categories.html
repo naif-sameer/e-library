@@ -123,42 +123,92 @@
 
     <main class="c-categories">
       <div class="container">
-        <aside class="sidebar">
-          <!-- links -->
-          <div class="nav-links">
-            <a href="#" class="nav-links__item"> الرئيسيه </a>
-            <a href="#" class="nav-links__item"> الكتب العربية </a>
-            <a href="#" class="nav-links__item"> كتب الكترونية </a>
+        <div class="categories-wrapper">
+          <!-- sidebar section -->
+          <aside class="sidebar">
+            <!-- links -->
+            <div class="nav-links">
+              <a href="#" class="nav-links__item"> الرئيسيه </a>
+              <a href="#" class="nav-links__item"> الكتب العربية </a>
+              <a href="#" class="nav-links__item"> كتب الكترونية </a>
+            </div>
+
+            <div class="sidebar-label">
+              <i class="fa fa-book"></i>
+              كتب الكترونية
+            </div>
+
+            <div class="sidebar-filter">
+              <h3 class="sidebar-filter__title">تصفيه النتائج</h3>
+
+              <div class="sidebar__item">
+                علامات تجارية
+                <i class="fa fa-minus-square"></i>
+              </div>
+
+              <div class="sidebar__item">
+                السعر
+                <i class="fa fa-minus-square"></i>
+              </div>
+
+              <div class="sidebar__item-range">
+                <div class="range">
+                  <input type="range" name="" id="" />
+                </div>
+
+                <div class="price">
+                  <span> 0 ر.س </span>
+
+                  <span> 200 ر.س </span>
+                </div>
+              </div>
+
+              <div class="sidebar__item">
+                صيغه الكتاب
+                <i class="fa fa-minus-square"></i>
+              </div>
+            </div>
+          </aside>
+
+          <!-- products section -->
+          <div class="products">
+            <div class="products-filter">
+              <div>ترتيب بحسب:</div>
+
+              <select>
+                <option selected disabled>الرجاء الاختيار</option>
+                <option value="price">السعر</option>
+                <option value="value">القيمة</option>
+              </select>
+            </div>
+
+            <div class="list" dir="auto">
+              <!-- item 1 -->
+              <div class="item">
+                <div class="item-img">
+                  <img src="img/books/book-1.jpg" alt="book image" />
+                </div>
+
+                <h3 class="item-label">pdf book</h3>
+
+                <div class="item-rating">
+                  <i class="fa fa-star item-rating-icon"></i>
+                  <i class="fa fa-star item-rating-icon"></i>
+                  <i class="fa fa-star item-rating-icon"></i>
+                  <i class="fa fa-star item-rating-icon"></i>
+                  <i class="fa fa-star item-rating-icon"></i>
+                </div>
+
+                <h4 class="item-title">Good man like me</h4>
+
+                <p class="">
+                  <span class="price-label"> 120$ </span>
+                  <span>ر.س</span>
+                </p>
+              </div>
+            </div>
           </div>
-
-          <div class="sidebar-label">
-            <i class="fa fa-book"></i>
-            كتب الكترونية
-          </div>
-
-          <div class="sidebar-filter">
-            <h3 class="sidebar-filter__title">تصفيه النتائج</h3>
-
-            <div class="sidebar__item">
-              علامات تجارية
-              <i class="fa fa-minus-square"></i>
-            </div>
-
-            <div class="sidebar__item">
-              السعر
-              <i class="fa fa-minus-square"></i>
-            </div>
-
-            <div class="sidebar__item-range">
-              <input type="range" />
-            </div>
-
-            <div class="sidebar__item">
-              صيغه الكتاب
-              <i class="fa fa-minus-square"></i>
-            </div>
-          </div>
-        </aside>
+        </div>
       </div>
     </main>
   </body>
