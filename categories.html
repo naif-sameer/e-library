@@ -15,54 +15,54 @@
       <!-- header menu section -->
       <div class="c-header-menu">
         <div class="container">
-          <ul class="c-header__list">
-            <li class="c-header__item">
+          <ul class="list">
+            <li class="item">
               <a href="#">
                 <i class="fa fa-user"></i>
                 ادخل لحسابك أو سجل الآن
               </a>
             </li>
-            <li class="c-header__item">
+            <li class="item">
               <a href="">
                 <i class="fa fa-star"></i>
                 المفضلة
               </a>
             </li>
-            <li class="c-header__item">
+            <li class="item">
               <a href="">
                 <i class="fa fa-bus"></i>
 
                 تتبع الشحنة
               </a>
             </li>
-            <li class="c-header__item">
+            <li class="item">
               <a href="">
                 <i class="fa fa-save"></i>
 
                 طلبات الصيانة
               </a>
             </li>
-            <li class="c-header__item">
+            <li class="item">
               <a href="">
                 <i class="fa fa-info-circle"></i>
 
                 المساعدة
               </a>
             </li>
-            <li class="c-header__item">
+            <li class="item">
               <a href="">
                 <i class="fa fa-podcast"></i>
 
                 فروعنا
               </a>
             </li>
-            <li class="c-header__item">
+            <li class="item">
               <a href="">
                 <i class="fa fa-cloud-moon"></i>
                 المملكة العربية السعودية | ر.س
               </a>
             </li>
-            <li class="c-header__item">
+            <li class="item">
               <a href="">
                 <i class="fa fa-language"></i>
                 English
@@ -182,34 +182,78 @@
               </select>
             </div>
 
-            <div class="list" dir="auto">
-              <!-- item 1 -->
-              <div class="item">
-                <div class="item-img">
-                  <img src="img/books/book-1.jpg" alt="book image" />
+            <!-- books -->
+            <div class="c-books">
+              <div class="list">
+                <!-- item 1 -->
+                <div class="item">
+                  <div class="item-img">
+                    <img src="img/books/book-3.jpg" alt="book image" />
+                  </div>
+
+                  <div class="item-content">
+                    <h3 class="item-label">
+                      <i class="fa fa-book"></i>
+
+                      كتاب الاكتروني
+                    </h3>
+
+                    <div class="item-rating">
+                      <i class="fa fa-star item-rating-icon is-active"></i>
+                      <i class="fa fa-star item-rating-icon is-active"></i>
+                      <i class="fa fa-star item-rating-icon is-active"></i>
+                      <i class="fa fa-star item-rating-icon"></i>
+                      <i class="fa fa-star item-rating-icon"></i>
+                    </div>
+
+                    <h4 class="item-title">نظرية الضفادع تحت المجهر</h4>
+
+                    <div class="item-price" dir="rtl">
+                      <span class="price-label"> 120 </span>
+                      ر.س
+
+                      <span class="tax"> شامل الضرائب </span>
+                    </div>
+
+                    <div class="item-another-format">
+                      <span>صيغ اخرى: </span>
+                      <a href="#"> كتاب مطبوع </a>
+                    </div>
+
+                    <div class="item-footer">
+                      <a href="#" class="star">
+                        <i class="fa fa-star"> </i>
+                      </a>
+
+                      <a href="#" class="shopping">
+                        <i class="fa fa-shopping-cart"> </i>
+                      </a>
+
+                      <a href="#" class="share">
+                        <i class="fa fa-share-alt"> </i>
+                      </a>
+                    </div>
+                  </div>
                 </div>
-
-                <h3 class="item-label">pdf book</h3>
-
-                <div class="item-rating">
-                  <i class="fa fa-star item-rating-icon"></i>
-                  <i class="fa fa-star item-rating-icon"></i>
-                  <i class="fa fa-star item-rating-icon"></i>
-                  <i class="fa fa-star item-rating-icon"></i>
-                  <i class="fa fa-star item-rating-icon"></i>
-                </div>
-
-                <h4 class="item-title">Good man like me</h4>
-
-                <p class="">
-                  <span class="price-label"> 120$ </span>
-                  <span>ر.س</span>
-                </p>
               </div>
             </div>
+
+            <!-- show more -->
+            <button class="show-more">عرض المزيد</button>
+
+            <div class="dived-line"></div>
+
+            <h3 class="buy-more-book">
+              اشتر من إلكتروني على متجر جرير الكتروني
+            </h3>
           </div>
         </div>
       </div>
     </main>
+
+    <script src="js/books.js"></script>
+    <script>
+      renderBooks(9);
+    </script>
   </body>
 </html>
