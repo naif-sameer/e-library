@@ -158,10 +158,10 @@
               </a>
             </li>
             <li class="item">
-              <a href="">
+              <button data-lang='ar' class="lang-btn">
                 <i class="fa fa-language"></i>
                 English
-              </a>
+              </button>
             </li>
           </ul>
         </div>
@@ -1124,6 +1124,24 @@
         prevBtn: '.slider-prev-btn',
         dotes: true,
       });
+    </script>
+
+    <script>
+      // change page mode when the language change
+      const langBtn = document.querySelector('.lang-btn');
+
+      langBtn.onclick = () => {
+        const lang = langBtn.getAttribute('data-lang');
+        if (lang === 'en') {
+          langBtn.setAttribute('data-lang', 'ar');
+          document.querySelector('html').dir = 'rtl';
+          document.querySelector('html').lang = 'ar';
+        } else if (lang === 'ar') {
+          langBtn.setAttribute('data-lang', 'en');
+          document.querySelector('html').dir = 'ltr';
+          document.querySelector('html').lang = 'en';
+        }
+      };
     </script>
   </body>
 </html>
