@@ -11,6 +11,100 @@
     <link rel="stylesheet" href="css/index.css" />
   </head>
   <body>
+    <!-- signup modal section -->
+    <div class="c-form modal-wrapper">
+      <div class="container modal">
+        <button class="modal-btn">
+          <i class="fa fa-plus"></i>
+        </button>
+        <h2 class="c-form__title">Signup</h2>
+
+        <form class="c-form__form">
+          <div>
+            <label for="signup-form-name">First Name</label>
+            <input id="signup-form-name" type="text" />
+          </div>
+
+          <div>
+            <label for="signup-form-family-name">Family Name</label>
+            <input id="signup-form-family-name" type="text" />
+          </div>
+
+          <div>
+            <label>Email</label>
+            <input type="email" />
+          </div>
+
+          <div>
+            <label>Confirm Email</label>
+            <input type="email" />
+          </div>
+
+          <div>
+            <label for="signup-form-pass">Password</label>
+            <input type="text" id="signup-form-pass" />
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" name="" id="signup-form-checkbox-term" />
+            <label for="signup-form-checkbox-term">Our term</label>
+          </div>
+
+          <div class="checkbox-group">
+            <input
+              type="checkbox"
+              name=""
+              id="signup-form-checkbox-join-our-email"
+            />
+            <label for="signup-form-checkbox-join-our-email"
+              >Join our Email</label
+            >
+          </div>
+
+          <div>
+            <button>Signup</button>
+          </div>
+        </form>
+
+        <p class="c-form__forget-pass">Don't have an account</p>
+
+        <div class="c-form__new-account-link">
+          <a>Create new account</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- login modal section -->
+    <div class="c-form modal-wrapper">
+      <div class="container modal">
+        <button class="modal-btn">
+          <i class="fa fa-plus"></i>
+        </button>
+        <h2 class="c-form__title">Login in</h2>
+        <form class="c-form__form">
+          <div>
+            <label for="login-form-name">Name</label>
+            <input id="login-form-name" type="text" />
+          </div>
+
+          <div>
+            <label for="login-form-pass">Password</label>
+            <input type="text" id="login-form-pass" />
+          </div>
+
+          <div>
+            <button>Login in</button>
+          </div>
+        </form>
+
+        <p class="c-form__forget-pass">Don't have an account</p>
+
+        <div class="c-form__new-account-link">
+          <a>Create new account</a>
+        </div>
+      </div>
+    </div>
+
     <!-- header section -->
     <header class="c-header">
       <!-- header menu section -->
@@ -118,6 +212,18 @@
           <div class="item">
             <img src="img/slider/slider-3.jpg" alt="slider image" />
           </div>
+
+          <div class="c-slider-btn">
+            <button class="slider-next-btn">
+              <i class="fa fa-angle-right"></i>
+            </button>
+
+            <button class="slider-prev-btn">
+              <i class="fa fa-angle-left"></i>
+            </button>
+          </div>
+
+          <div class="c-slider-dotes"></div>
         </div>
       </div>
     </section>
@@ -1009,5 +1115,15 @@
         </div>
       </div>
     </footer>
+
+    <script src="js/slider.js"></script>
+    <script>
+      slider({
+        items: '.c-slider .item',
+        nextBtn: '.slider-next-btn',
+        prevBtn: '.slider-prev-btn',
+        dotes: true,
+      });
+    </script>
   </body>
 </html>

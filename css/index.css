@@ -104,6 +104,11 @@ input::placeholder {
   text-align: center;
 }
 
+.section-title {
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
 .c-header-menu {
   background-color: var(--color-third);
 }
@@ -222,20 +227,60 @@ input::placeholder {
 }
 
 .c-slider .list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  overflow-x: auto;
-  -ms-scroll-snap-type: x mandatory;
-      scroll-snap-type: x mandatory;
+  position: relative;
 }
 
 .c-slider .item {
   min-width: 100%;
+  display: none;
+}
+
+.c-slider .item.is-active {
+  display: block;
 }
 
 .c-slider .item img {
   scroll-snap-align: start;
+}
+
+.c-slider-btn button {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 1.8rem;
+}
+
+.c-slider-btn .slider-next-btn {
+  right: 10px;
+}
+
+.c-slider-btn .slider-prev-btn {
+  left: 10px;
+}
+
+.c-slider-dotes {
+  direction: ltr;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+.c-slider-dotes div {
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-gray);
+  cursor: pointer;
+}
+
+.c-slider-dotes div.is-active {
+  background-color: var(--color-third);
 }
 
 .c-home-categories {
@@ -259,18 +304,24 @@ input::placeholder {
       -ms-flex-pack: justify;
           justify-content: space-between;
   gap: 1rem;
-  overflow-x: auto;
-  -ms-scroll-snap-type: x mandatory;
-      scroll-snap-type: x mandatory;
+}
+
+@media (max-width: 992px) {
+  .c-home-categories .list {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 
 .c-home-categories .item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 150px;
+          flex: 1 1 150px;
   padding: 1rem 1.5rem;
   min-width: 120px;
   text-align: center;
   -webkit-box-shadow: 0px -1px 2px 0px #bbbbbb inset;
           box-shadow: 0px -1px 2px 0px #bbbbbb inset;
-  scroll-snap-align: start;
 }
 
 .c-home-categories .item img {
@@ -459,17 +510,7 @@ input::placeholder {
   font-weight: 600;
 }
 
-.c-login {
-  max-width: 500px;
-  margin: auto;
-  margin-top: 5rem;
-  -webkit-box-shadow: var(--shadow);
-          box-shadow: var(--shadow);
-  padding: 2rem 0.25rem;
-  border-radius: var(--rounded);
-}
-
-.c-login__title {
+.c-form__title {
   margin: 0;
   text-align: center;
   font-weight: 600;
@@ -477,16 +518,16 @@ input::placeholder {
   border-bottom: 2px solid var(--color-third);
 }
 
-.c-login input,
-.c-login button {
+.c-form input,
+.c-form button {
   border-radius: var(--rounded);
 }
 
-.c-login__form {
+.c-form__form {
   margin-top: 2.25rem;
 }
 
-.c-login__form div {
+.c-form__form div {
   position: relative;
   margin-top: 0.75rem;
   display: -webkit-box;
@@ -498,21 +539,40 @@ input::placeholder {
           flex-direction: column;
 }
 
-.c-login__form input {
+.c-form__form .checkbox-group {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: .5rem;
+}
+
+.c-form__form .checkbox-group label {
+  font-size: 1rem;
+  position: static;
+}
+
+.c-form__form input {
   margin-top: 0.25rem;
   padding: 0.8rem 1rem;
   background-color: var(--color-third);
   border: none;
 }
 
-.c-login__form label {
+.c-form__form label {
   position: absolute;
   top: 0.5rem;
   left: 0.5rem;
   font-size: 0.7rem;
 }
 
-.c-login__form button {
+.c-form__form button {
   margin-top: 0.5rem;
   background-color: var(--color-red);
   border: none;
@@ -521,12 +581,12 @@ input::placeholder {
   text-align: center;
 }
 
-.c-login__forget-pass {
+.c-form__forget-pass {
   margin-top: 3rem;
   text-align: center;
 }
 
-.c-login__new-account-link {
+.c-form__new-account-link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -535,7 +595,7 @@ input::placeholder {
           justify-content: center;
 }
 
-.c-login__new-account-link a {
+.c-form__new-account-link a {
   display: inline-block;
   -webkit-box-shadow: 0 0 5px gray;
           box-shadow: 0 0 5px gray;
@@ -543,6 +603,11 @@ input::placeholder {
   text-align: center;
   border-radius: var(--rounded);
   font-size: 0.9rem;
+}
+
+.c-signup {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .c-nav-history {
@@ -637,11 +702,6 @@ input::placeholder {
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
-}
-
-.c-details .c-info__title {
-  font-weight: 600;
-  font-size: 1.5rem;
 }
 
 .c-details .c-info__show-more {
@@ -781,11 +841,6 @@ input::placeholder {
   margin-top: 1rem;
 }
 
-.c-details-info .list-title {
-  font-size: 1.4rem;
-  font-weight: 600;
-}
-
 .c-details-info .list .item {
   margin-top: 1rem;
   padding-bottom: 1rem;
@@ -835,11 +890,6 @@ input::placeholder {
   display: -ms-flexbox;
   display: flex;
   gap: 1rem;
-}
-
-.c-customer .header .title {
-  font-size: 1.4rem;
-  font-weight: 600;
 }
 
 .c-customer .header .add-review-btn {
@@ -904,6 +954,63 @@ input::placeholder {
 
 .c-customer .item-comment {
   padding: 0.75rem;
+}
+
+.c-other-products .slider-wrapper {
+  position: relative;
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+}
+
+.c-other-products .slider-wrapper .slider-btns button {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background: var(--color-third);
+  color: var(--color-secondary-light);
+  font-size: 1.3rem;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.c-other-products .slider-wrapper .slider-btns button.slider-btn-next {
+  right: 0px;
+}
+
+.c-other-products .slider-wrapper .slider-btns button.slider-btn-preview {
+  left: 0px;
+}
+
+.c-other-products .slider {
+  margin-top: 1rem;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.c-other-products .slider-item {
+  min-width: 170px;
+  max-width: 300px;
+  padding: 0.5rem 1rem;
+  -webkit-box-shadow: var(--shadow);
+          box-shadow: var(--shadow);
+  border-radius: var(--rounded);
+}
+
+.c-other-products .slider-item-title {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.c-other-products .slider-item .c-price {
+  margin-top: 1.25rem;
 }
 
 .main .c-books .list {
@@ -1188,6 +1295,70 @@ input::placeholder {
   .c-copyright__payments img {
     width: 40px;
   }
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #fff;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal-wrapper.is-active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.modal {
+  position: relative;
+  padding: 2rem 1rem;
+  width: 100%;
+  max-width: 500px;
+  -webkit-box-shadow: var(--shadow);
+          box-shadow: var(--shadow);
+  border-radius: var(--rounded);
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.modal::-webkit-scrollbar {
+  width: 3px;
+}
+
+.modal::-webkit-scrollbar-thumb {
+  background-color: var(--color-secondary);
+  border-radius: 20px;
+}
+
+.modal::-webkit-scrollbar-track {
+  background: var(--color-third);
+}
+
+.modal .modal-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 1rem;
+}
+
+.modal .modal-btn:focus {
+  -webkit-box-shadow: 0px 0px 10px #e6e6e6;
+          box-shadow: 0px 0px 10px #e6e6e6;
+}
+
+.modal .modal-btn i {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .c-checkout {
