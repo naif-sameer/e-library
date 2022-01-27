@@ -372,6 +372,8 @@
                   <a href="#"> كتاب مطبوع </a>
                 </div>
 
+                <div class="offer-item"></div>
+
                 <div class="item-footer">
                   <a href="#" class="star">
                     <i class="fa fa-star"> </i>
@@ -387,7 +389,7 @@
                 </div>
               </div>
             </div>
-            <!-- item 1 -->
+            <!-- item 2 -->
             <div class="item">
               <div class="item-img">
                 <img src="img/books/book-3.jpg" alt="book image" />
@@ -422,6 +424,8 @@
                   <a href="#"> كتاب مطبوع </a>
                 </div>
 
+                <div class="offer-item"></div>
+
                 <div class="item-footer">
                   <a href="#" class="star">
                     <i class="fa fa-star"> </i>
@@ -437,7 +441,7 @@
                 </div>
               </div>
             </div>
-            <!-- item 1 -->
+            <!-- item 3 -->
             <div class="item">
               <div class="item-img">
                 <img src="img/books/book-3.jpg" alt="book image" />
@@ -472,6 +476,8 @@
                   <a href="#"> كتاب مطبوع </a>
                 </div>
 
+                <div class="offer-item"></div>
+
                 <div class="item-footer">
                   <a href="#" class="star">
                     <i class="fa fa-star"> </i>
@@ -487,7 +493,7 @@
                 </div>
               </div>
             </div>
-            <!-- item 1 -->
+            <!-- item 4 -->
             <div class="item">
               <div class="item-img">
                 <img src="img/books/book-3.jpg" alt="book image" />
@@ -521,6 +527,8 @@
                   <span>صيغ اخرى: </span>
                   <a href="#"> كتاب مطبوع </a>
                 </div>
+
+                <div class="offer-item"></div>
 
                 <div class="item-footer">
                   <a href="#" class="star">
@@ -1214,13 +1222,35 @@
           window.location.assign('details.html');
         });
       });
-      
+
       document.querySelectorAll('.c-books .item-label').forEach((item) => {
         item.style.cursor = 'pointer';
         item.addEventListener('click', () => {
           window.location.assign('details.html');
         });
       });
+    </script>
+
+    <script>
+      const time = new Date().getTime();
+      const timeEnd = new Date('Jan 30, 2022').getTime();
+      const s = 1000;
+      const m = s * 60;
+      const h = m * 60;
+      const d = h * 24;
+      const offerTime = Math.floor((timeEnd - time) / d);
+
+      document.querySelectorAll('.offer-item').forEach((item, index) => {
+        item.innerHTML = offerTime + index + ` يوم`;
+      });
+
+      console.log(
+        time,
+        timeEnd,
+        time - timeEnd,
+        (timeEnd - time) / d,
+        offerTime
+      );
     </script>
   </body>
 </html>
