@@ -1655,7 +1655,7 @@ input::placeholder {
   --color: #e5e7eb;
   --text-active-color: rgb(255, 255, 255);
   --text-color: black;
-  width: 80vw;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding-left: 2rem;
