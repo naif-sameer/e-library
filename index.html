@@ -1241,16 +1241,12 @@
       const offerTime = Math.floor((timeEnd - time) / d);
 
       document.querySelectorAll('.offer-item').forEach((item, index) => {
-        item.innerHTML = offerTime + index + ` يوم`;
+        if (offerTime + index <= 2) {
+          item.innerHTML = `انتهاء العرض الحالي`;
+        } else {
+          item.innerHTML = `${offerTime + index} ايام متبقي`;
+        }
       });
-
-      console.log(
-        time,
-        timeEnd,
-        time - timeEnd,
-        (timeEnd - time) / d,
-        offerTime
-      );
     </script>
   </body>
 </html>
