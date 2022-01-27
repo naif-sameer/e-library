@@ -187,12 +187,6 @@ input::placeholder {
   height: 35px;
 }
 
-@media (max-width: 450px) {
-  .c-nav .shopping-btn {
-    display: none;
-  }
-}
-
 .c-nav .shopping-btn .shopping-item-number {
   position: absolute;
   bottom: -13px;
