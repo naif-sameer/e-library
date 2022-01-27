@@ -1,9 +1,9 @@
 const checkoutElement = document.querySelector('.checkout-product-number');
 
-const selectElements = document.querySelectorAll('.c-select');
+const selectElements = document.querySelectorAll('.c-checkout .c-select');
 
 function saveToLocalStorage(key, value) {
-  if ((value !== '') | (value === 0)) {
+  if (value !== '' || value === 0) {
     localStorage.setItem(key, value);
   }
 
@@ -32,9 +32,13 @@ selectElements.forEach((item, index) => {
 
 function isSaveOnLocalStorage() {
   selectElements.forEach((item, index) => {
+    console.group();
+    console.log(localStorage, item, index);
     if (!localStorage.getItem(`select-${index}`)) {
       saveToLocalStorage(`select-${index}`, item.value);
     }
+    console.log(localStorage, item, index);
+    console.groupEnd();
   });
 }
 
