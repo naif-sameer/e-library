@@ -69,4 +69,10 @@ function slider({ items, nextBtn, prevBtn, dotes = false }) {
     // first time
     renderDotes();
   }
+
+  setInterval(() => {
+    sliderIndex = sliderIndex >= sliders.length - 1 ? 0 : sliderIndex + 1;
+    renderSlider();
+    renderDotes();
+  }, 3000);
 }

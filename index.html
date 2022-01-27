@@ -12,42 +12,68 @@
   </head>
   <body>
     <!-- signup modal section -->
-    <div class="c-form modal-wrapper">
+    <div class="c-form modal-wrapper js-signup-modal">
       <div class="container modal">
         <button class="modal-btn">
           <i class="fa fa-plus"></i>
         </button>
-        <h2 class="c-form__title">Signup</h2>
+        <h2 class="c-form__title">إنشاء حساب</h2>
 
         <form class="c-form__form">
+          <div class="phone-group">
+            <div>
+              <label for="signup-form-name">رقم الجوال</label>
+              <input id="signup-form-name" type="text" />
+            </div>
+
+            <div class="m-0">
+              <label for="signup-form-name">رمز البلد</label>
+              <select class="c-select">
+                <option value="967">
+                  <span>967</span>
+                  <i class="fa fa-flag-usa"></i>
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <p>سوف نرسل لك رمز التحقق عن طريق رساله نصية</p>
           <div>
-            <label for="signup-form-name">First Name</label>
+            <button>ارسال رمز التحقق</button>
+          </div>
+
+          <div>
+            <label for="signup-form-name">الاسم الاول</label>
             <input id="signup-form-name" type="text" />
           </div>
 
           <div>
-            <label for="signup-form-family-name">Family Name</label>
+            <label for="signup-form-family-name"> اسم العائلة </label>
             <input id="signup-form-family-name" type="text" />
           </div>
 
           <div>
-            <label>Email</label>
+            <label>البريد الالكتروني</label>
             <input type="email" />
           </div>
 
           <div>
-            <label>Confirm Email</label>
+            <label>تأكيد البريد الالكتروني</label>
             <input type="email" />
           </div>
 
           <div>
-            <label for="signup-form-pass">Password</label>
+            <label for="signup-form-pass">كلمة السر</label>
             <input type="text" id="signup-form-pass" />
           </div>
 
           <div class="checkbox-group">
             <input type="checkbox" name="" id="signup-form-checkbox-term" />
-            <label for="signup-form-checkbox-term">Our term</label>
+            <label for="signup-form-checkbox-term">
+              <span> اوافق </span>
+
+              <a href=""> على الشروط و الاحكام </a>
+            </label>
           </div>
 
           <div class="checkbox-group">
@@ -56,51 +82,56 @@
               name=""
               id="signup-form-checkbox-join-our-email"
             />
-            <label for="signup-form-checkbox-join-our-email"
-              >Join our Email</label
-            >
+            <label for="signup-form-checkbox-join-our-email">
+              التسجيل للانضام للنشرة البريدية
+            </label>
           </div>
 
           <div>
-            <button>Signup</button>
+            <button>انشاء حساب</button>
           </div>
         </form>
 
-        <p class="c-form__forget-pass">Don't have an account</p>
+        <p class="c-form__sign-up-link">
+          <span> لديك حساب؟ </span>
 
-        <div class="c-form__new-account-link">
-          <a>Create new account</a>
-        </div>
+          <button class="js-show-login-modal">تسجيل الدخول</button>
+        </p>
       </div>
     </div>
 
     <!-- login modal section -->
-    <div class="c-form modal-wrapper">
+    <div class="c-form modal-wrapper js-login-modal">
       <div class="container modal">
         <button class="modal-btn">
           <i class="fa fa-plus"></i>
         </button>
-        <h2 class="c-form__title">Login in</h2>
+        <h2 class="c-form__title">تسجيل الدخول</h2>
+
         <form class="c-form__form">
           <div>
-            <label for="login-form-name">Name</label>
+            <label for="login-form-name">
+              البريد الالكتروني او رقم الجوال
+            </label>
             <input id="login-form-name" type="text" />
           </div>
 
           <div>
-            <label for="login-form-pass">Password</label>
+            <label for="login-form-pass">كلمه السر</label>
             <input type="text" id="login-form-pass" />
+
+            <a href="" class="forget-pass-link"> نسيت؟ </a>
           </div>
 
           <div>
-            <button>Login in</button>
+            <button>تسجيل الدخول</button>
           </div>
         </form>
 
-        <p class="c-form__forget-pass">Don't have an account</p>
+        <p class="new-account-label">ليس لديك حساب؟</p>
 
         <div class="c-form__new-account-link">
-          <a>Create new account</a>
+          <button class="js-show-signup-modal">انشاء حساب جديد</button>
         </div>
       </div>
     </div>
@@ -112,10 +143,10 @@
         <div class="container">
           <ul class="list">
             <li class="item">
-              <a href="#">
+              <button class="js-show-signup-modal">
                 <i class="fa fa-user"></i>
                 ادخل لحسابك أو سجل الآن
-              </a>
+              </button>
             </li>
             <li class="item">
               <a href="">
@@ -158,7 +189,7 @@
               </a>
             </li>
             <li class="item">
-              <button data-lang='ar' class="lang-btn">
+              <button data-lang="ar" class="lang-btn">
                 <i class="fa fa-language"></i>
                 English
               </button>
@@ -170,9 +201,10 @@
       <!-- nav -->
       <div class="container">
         <nav class="c-nav">
-          <button class="shopping-btn">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
+          <!-- logo -->
+          <a href="index.html" class="logo">
+            <img src="img/icons/logo.svg" alt="" />
+          </a>
 
           <form action="" class="form">
             <input type="text" name="search-input" placeholder="search...." />
@@ -182,10 +214,13 @@
             </button>
           </form>
 
-          <!-- logo -->
-          <div class="logo">
-            <i class="fa fa-layer-group"></i>
-          </div>
+          <a href="checkout.html">
+            <button class="shopping-btn">
+              <i class="fa fa-shopping-cart"></i>
+
+              <span class="shopping-item-number"></span>
+            </button>
+          </a>
         </nav>
       </div>
     </header>
@@ -236,41 +271,61 @@
           <h2 class="title">تسوّق بالأقسام</h2>
 
           <div class="list">
-            <div class="item">
-              <img src="img/icons/smartphones.svg" alt="categories icon" />
+            <a href="categories.html">
+              <div class="item">
+                <i class="fa fa-phone"></i>
 
-              <h3 class="item-title">Test text</h3>
-            </div>
-            <div class="item">
-              <img src="img/icons/smartphones.svg" alt="categories icon" />
+                <h3 class="item-title">هواتف</h3>
+              </div>
+            </a>
 
-              <h3 class="item-title">Test text</h3>
-            </div>
-            <div class="item">
-              <img src="img/icons/smartphones.svg" alt="categories icon" />
+            <a href="categories.html">
+              <div class="item">
+                <i class="fa fa-car"></i>
 
-              <h3 class="item-title">Test text</h3>
-            </div>
-            <div class="item">
-              <img src="img/icons/smartphones.svg" alt="categories icon" />
+                <h3 class="item-title">سيارات</h3>
+              </div>
+            </a>
 
-              <h3 class="item-title">Test text</h3>
-            </div>
-            <div class="item">
-              <img src="img/icons/smartphones.svg" alt="categories icon" />
+            <a href="categories.html">
+              <div class="item">
+                <i class="fa fa-qrcode"></i>
 
-              <h3 class="item-title">Test text</h3>
-            </div>
-            <div class="item">
-              <img src="img/icons/smartphones.svg" alt="categories icon" />
+                <h3 class="item-title">ادوات</h3>
+              </div>
+            </a>
 
-              <h3 class="item-title">Test text</h3>
-            </div>
-            <div class="item">
-              <img src="img/icons/smartphones.svg" alt="categories icon" />
+            <a href="categories.html">
+              <div class="item">
+                <i class="fa fa-tv"></i>
 
-              <h3 class="item-title">Test text</h3>
-            </div>
+                <h3 class="item-title">اجهزه</h3>
+              </div>
+            </a>
+
+            <a href="categories.html">
+              <div class="item">
+                <i class="fa fa-paperclip"></i>
+
+                <h3 class="item-title">ادوات مكتبيه</h3>
+              </div>
+            </a>
+
+            <a href="categories.html">
+              <div class="item">
+                <i class="fa fa-baseball-ball"></i>
+
+                <h3 class="item-title">رياضة</h3>
+              </div>
+            </a>
+
+            <a href="categories.html">
+              <div class="item">
+                <i class="fa fa-ship"></i>
+
+                <h3 class="item-title">سفر</h3>
+              </div>
+            </a>
           </div>
         </div>
 
@@ -495,6 +550,7 @@
 
           <div class="list">
             <!-- item 1 -->
+
             <div class="item">
               <div class="item-img">
                 <img src="img/books/book-3.jpg" alt="book image" />
@@ -545,6 +601,7 @@
               </div>
             </div>
             <!-- item 1 -->
+
             <div class="item">
               <div class="item-img">
                 <img src="img/books/book-3.jpg" alt="book image" />
@@ -595,6 +652,7 @@
               </div>
             </div>
             <!-- item 1 -->
+
             <div class="item">
               <div class="item-img">
                 <img src="img/books/book-3.jpg" alt="book image" />
@@ -645,6 +703,7 @@
               </div>
             </div>
             <!-- item 1 -->
+
             <div class="item">
               <div class="item-img">
                 <img src="img/books/book-3.jpg" alt="book image" />
@@ -1117,6 +1176,7 @@
     </footer>
 
     <script src="js/slider.js"></script>
+    <script src="js/modal.js"></script>
     <script>
       slider({
         items: '.c-slider .item',
@@ -1142,6 +1202,25 @@
           document.querySelector('html').lang = 'en';
         }
       };
+
+      // get the value from the local storage
+      document.querySelector('.shopping-item-number').innerHTML =
+        localStorage.getItem('checkout-product-nubmer');
+
+      // when click on the img or title of the book go to details page
+      document.querySelectorAll('.c-books .item-img').forEach((item) => {
+        item.style.cursor = 'pointer';
+        item.addEventListener('click', () => {
+          window.location.assign('details.html');
+        });
+      });
+      
+      document.querySelectorAll('.c-books .item-label').forEach((item) => {
+        item.style.cursor = 'pointer';
+        item.addEventListener('click', () => {
+          window.location.assign('details.html');
+        });
+      });
     </script>
   </body>
 </html>
